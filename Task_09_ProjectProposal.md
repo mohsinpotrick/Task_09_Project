@@ -2,13 +2,13 @@
 
 **Health Insurance Costs and Financial Planning Risk: A Data-Driven Framework with Community-Level Implications for Syracuse**
 
----
+
 
 ## Project Title and Summary
 
 Health insurance expenses are a significant and often unpredictable component of household financial planning. This project analyzes a national health insurance cost dataset to identify the primary drivers of insurance charges and financial risk at the individual and household level. Using statistical analysis and interpretable modeling techniques, the project will quantify how factors such as age, family size, health indicators, and smoking status influence insurance costs. Syracuse Open Data will be used only as a contextual extension, allowing findings from the primary analysis to be interpreted through the lens of local demographic patterns and community needs. The final deliverable will provide educational insights that support financial planning, health literacy, and policy discussion without relying on Syracuse data as a primary analytical input.
 
----
+
 
 ## Problem Statement
 
@@ -16,7 +16,7 @@ Households across the United States face increasing pressure from rising health 
 
 This project addresses the question: **What are the dominant drivers of health insurance costs, and how can these insights inform community-level financial planning and health literacy efforts?** The primary audience includes individuals seeking to understand insurance cost dynamics, nonprofit organizations focused on financial education, and public-sector stakeholders interested in the broader implications of insurance affordability. Syracuse Open Data is incorporated only at the recommendation stage, helping frame how nationally observed insurance cost drivers may be relevant to Syracuse residents and organizations, without treating local data as predictive or primary evidence.
 
----
+
 
 ## Data Sources
 
@@ -38,7 +38,7 @@ This project addresses the question: **What are the dominant drivers of health i
 
 All conclusions will clearly distinguish analytical results from contextual interpretation.
 
----
+
 
 ## Technical Approach
 
@@ -46,13 +46,13 @@ The analysis will begin with comprehensive exploratory data analysis (EDA) of th
 
 Large Language Models (LLMs) will be integrated as analytical support tools to assist in interpreting and communicating results. LLMs will be used to generate multiple narrative explanations of model outputs, translate statistical findings into plain-language financial planning insights, and surface potential framing biases. All LLM-generated content will be validated against ground-truth calculations and documented using prompt engineering and validation techniques developed in prior research tasks. Syracuse Open Data will be referenced only during the recommendation phase to illustrate how observed cost drivers may intersect with local demographic trends.
 
----
+
 
 ## Deliverable Description
 
 The final deliverable will be a standalone analytical report and interactive visualization dashboard focused on insurance cost drivers and financial planning risk. The dashboard will allow users to explore how insurance charges vary by key factors and view explanatory visualizations. A dedicated section will translate these findings into community-level recommendations, using Syracuse Open Data solely to contextualize potential relevance for local residents and organizations. The deliverable will be explicitly educational and exploratory, avoiding personalized predictions or prescriptive advice.
 
----
+
 
 ## Success Criteria
 
@@ -62,7 +62,7 @@ The final deliverable will be a standalone analytical report and interactive vis
 - Accessible communication of complex financial concepts to non-technical audiences  
 - A polished, reproducible project suitable for public sharing and portfolio use
 
----
+
 
 ## Timeline
 
@@ -84,7 +84,7 @@ Dashboard and report development
 **Weeks 12–13**  
 Refinement, documentation, and presentation preparation
 
----
+
 
 ## Risks and Mitigations
 
