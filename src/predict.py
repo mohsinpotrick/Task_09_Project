@@ -1,28 +1,34 @@
 import numpy as np
 import pandas as pd
+from src.validation import validate_input
+from src.risk import cost_band
 
-def predict_insurance_cost(model, user_input: dict):
+
+def predict_insurance_cost(model, user_input):
     """
-    Generate bias-corrected insurance cost prediction
-    using Duan's smearing estimator.
+    Predict insurance cost using log-linear model
+    and apply smearing correction.
     """
 
-    df = pd.DataFrame([user_input])
-    features = model.model.exog_names
-    df = df.reindex(columns=features, fill_value=0)
+    # Validate input
+    validate_input(user_input)
 
-    # Log prediction
-    log_pred = model.predict(df)[0]
+    # Convert to DataFrame
+    import pandas as pd
+    user_df = pd.DataFrame([user_input])
 
-    # Smearing factor
+    # Predict log cost
+    log_pred = model.predict(user_df)[0]
+
+    # Smearing correction
     residuals = model.resid
     smearing_factor = np.mean(np.exp(residuals))
 
-    # Bias-corrected prediction
     cost_pred = np.exp(log_pred) * smearing_factor
 
     return {
         "predicted_log_cost": float(log_pred),
         "predicted_annual_cost": float(cost_pred),
-        "smearing_factor": float(smearing_factor)
+        "smearing_factor": float(smearing_factor),
+        "risk_category": cost_band(cost_pred)
     }
