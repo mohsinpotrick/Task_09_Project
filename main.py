@@ -1,32 +1,34 @@
 import pandas as pd
+import numpy as np
 from src.modeling import train_linear_model
 from src.predict import predict_insurance_cost
 
-# Load cleaned dataset
-df = pd.read_csv("/workspaces/Task_09_Project/data/insurance_clean.csv")
+print("\n=== Insurance Cost Estimator ===\n")
 
-# Train log model
-import numpy as np
-df["log_charges"] = np.log(df["charges"])
+try:
+    df = pd.read_csv("/workspaces/Task_09_Project/data/insurance_clean.csv")
 
-model = train_linear_model(df.drop(columns=["charges"]), target="log_charges")
+    df["log_charges"] = np.log(df["charges"])
+    model = train_linear_model(df.drop(columns=["charges"]), target="log_charges")
 
-# Example user input
-user = {
-    "const": 1,
-    "age": 40,
-    "sex": 0,
-    "bmi": 28,
-    "children": 2,
-    "smoker": 0,
-    "region_northwest": 0,
-    "region_southeast": 1,
-    "region_southwest": 0
-}
+    user = {
+        "const": 1,
+        "age": 40,
+        "sex": 0,
+        "bmi": 28,
+        "children": 2,
+        "smoker": 0,
+        "region_northwest": 0,
+        "region_southeast": 1,
+        "region_southwest": 0
+    }
 
-prediction = predict_insurance_cost(model, user)
+    prediction = predict_insurance_cost(model, user)
 
-print("\nInsurance Cost Estimate")
-print("---------------------------")
-print(f"Estimated Annual Cost: ${prediction['predicted_annual_cost']:.2f}")
-print(f"Risk Category: {prediction['risk_category']}")
+    print("Estimated Annual Cost: "
+          f"${prediction['predicted_annual_cost']:.2f}")
+    print("Risk Category:", prediction["risk_category"])
+
+except Exception as e:
+    print("\nAn error occurred:")
+    print(str(e))
